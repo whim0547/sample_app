@@ -14,7 +14,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get static_pages_home_url
     assert_response :success
     # tilte タグ内に "(第二引数)"内の文字列があるか
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "should get help" do
