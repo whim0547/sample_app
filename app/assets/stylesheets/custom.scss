@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import"bootstrap";
 
+
+// Sassによる変数宣言
+$light-green: #070;
+
 body {
   // 上の余白
   padding-top: 60px;
@@ -15,13 +19,22 @@ textarea {
 }
 
 //."class" で対応classに対して{}内のプロパティを対応づける
+// .centor {
+//   //中央ぞろえ
+//   text-align: center;
+// }
+//
+// .center h1 {
+//   margin-bottom: 10px;
+// }
+
+//上と同じ(Sassはネストできる)
 .centor {
   //中央ぞろえ
   text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 
@@ -42,7 +55,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #700;
+  color: $light-green;
 }
 
 p {
@@ -54,17 +67,24 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  // hover属性、該当する要素の上にマウスポインタをかざしたときの表示を定義
+  &:hover {
+    color: #f0f;
+    text-decoration: underline;
+  }
 }
 
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
+//上にネスト
+// hover属性、該当する要素の上にマウスポインタをかざしたときの表示を定義
+// #logo:hover {
+//   color: #f0f;
+//   text-decoration: none;
+// }
 
 // img {
 //   // 画像を非表示
@@ -74,31 +94,55 @@ p {
 
 /* footer */
 
+// footer {
+//   margin-top: 45px;
+//   padding-top: 5px;
+//   border-top: 1px solid #eaeaea;
+//   color: #070;
+// }
+//
+// footer a {
+//   color: #555;
+// }
+//
+// footer a:havor {
+//   color: #222;
+// }
+//
+// footer small {
+//   float: left;
+// }
+//
+// footer ul {
+//   float: right;
+//   list-style: none;
+// }
+//
+// footer ul li {
+//   float: left;
+//   margin-left: 15px;
+// }
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #070;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:havor {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
+  color: $light-green;
+  a {
+    color: $gray-light; //bootstrap-scssで用意された変数
+    &:havor {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 }
