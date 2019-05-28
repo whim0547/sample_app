@@ -1,3 +1,4 @@
+<!-- html5を使う宣言 -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,9 +10,63 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- html5が読み込まれないブラウザへの対応(条件付きコメント) -->
+    <!-- Microsoft Internet Explorer(IE)がver9未満ならhtml5 shimで読み込む -->
+
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
 
   <body>
-    <%= yield %>
+    <!-- 上部に来て欲しいものはheaderタグ -->
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <!-- divタグは一般的な表示領域を表し、要素を別々のパーツに分けるときに使う
+        header nav section要素に分かれる
+      -->
+        <div class="container">
+          <!-- link_to("link_text", "link_url(#はダミー)", オプションハッシュ) -->
+          <%= link_to "sample app", '#', id:"logo" %>
+          <!-- navタグはタグ内がナビゲーションリンクであることを明示化する -->
+          <nav>
+            <!--
+              ul : UnorderedList
+              li : list item
+            -->
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Home", '#' %></li>
+              <li><%= link_to "Help", '#' %></li>
+              <li><%= link_to "Log in", '#' %></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+    <!-- メインコンテンツ -->
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <div class="centor jumbutron">
+      <h1>Welcome to the Sample App</h1>
+
+      <h2>
+        This is the home page for the
+        <a href="https://railstutorial"> Ruby on Rails Tutorial</a>
+        sample application.
+      </h2>
+      <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-prima" %>
+    </div>
+
+
+    <!--
+      image_tagで画像へのファイルパスを与える
+      画像はapp/assets/imagesに置く
+      alt属性は画像がない場合に代わりに表示される文字列
+    -->
+    <%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.' %>
+    <%= link_to image_tag("kitten.jpg", alt: "nyaaan"), 'http://rubyonrails.' %>
+
   </body>
 </html>
