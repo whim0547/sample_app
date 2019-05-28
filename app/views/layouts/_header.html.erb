@@ -1,0 +1,22 @@
+<!-- 上部に来て欲しいものはheaderタグ -->
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <!-- divタグは一般的な表示領域を表し、要素を別々のパーツに分けるときに使う
+    header nav section要素に分かれる
+  -->
+    <div class="container">
+      <!-- link_to("link_text", "link_url(#はダミー)", オプションハッシュ) -->
+      <%= link_to "sample app", '#', id:"logo" %>
+      <!-- navタグはタグ内がナビゲーションリンクであることを明示化する -->
+      <nav>
+        <!--
+          ul : UnorderedList
+          li : list item
+        -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", '#' %></li>
+          <li><%= link_to "Help", '#' %></li>
+          <li><%= link_to "Log in", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+</header>

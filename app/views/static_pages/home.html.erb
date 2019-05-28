@@ -1,7 +1,28 @@
 <%# <% provide(:title, "Home") %>
-<h1>Sample App</h1>
+<div class="centor jumbutron">
+  <h1>Welcome to the Sample App</h1>
+
+  <h2>
+    This is the home page for the
+    <a href="https://railstutorial"> Ruby on Rails Tutorial</a>
+    sample application.
+  </h2>
+  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-prima" %>
+</div>
+
+
+<!--
+  image_tagで画像へのファイルパスを与える
+  画像はapp/assets/imagesに置く
+  alt属性は画像がない場合に代わりに表示される文字列
+-->
+<%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.' %>
+<%#u= image_tag("kitten.jpg", alt: "nyaaan") %>
+
+
+<!-- <h1>Sample App</h1>
 <p>
   This is the home page for the
   <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
   sample application.
-</p>
+</p> -->

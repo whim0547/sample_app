@@ -70,3 +70,35 @@ p {
 //   // 画像を非表示
 //   display: none;
 // }
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #070;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:havor {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
